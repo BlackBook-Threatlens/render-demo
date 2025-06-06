@@ -14,7 +14,7 @@ def predict_route():
         if not text:
             return jsonify({'error': 'No text provided'}), 400
 
-        prediction = predict(text) # Call the predict function
+        prediction = model.predict(text) # Call the predict function
         result = int(prediction)
 
         return jsonify({'result': result}), 200  # Return the integer prediction
