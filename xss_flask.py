@@ -7,14 +7,15 @@ app = Flask(__name__)
 def predict_route():
     try:
         data = request.get_json()
-        text_to_check = data.get('text')
+        text = data.get('text', '  ')
 
-        if not text_to_check:
+        if not text:
             return jsonify({'error': 'No text provided'}), 400
 
-        prediction = predict(text_to_check) # Call the predict function
+        Prediction = predict(text) # Call the predict function
+        result = int(Prediciton[0])
 
-        return jsonify({'prediction': prediction}), 200  # Return the integer prediction
+        return jsonify({'result': result}), 200  # Return the integer prediction
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
