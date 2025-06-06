@@ -15,7 +15,7 @@ def predict_route():
             return jsonify({'error': 'No text provided'}), 400
 
         Prediction = predict(text) # Call the predict function
-        result = int(Prediciton[0])
+        result = int(prediction[0])
 
         return jsonify({'result': result}), 200  # Return the integer prediction
 
