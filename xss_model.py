@@ -1,15 +1,15 @@
 import pandas as pd
-import numpy as np
+'''import numpy as np
 import seaborn as sns
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt'''
 import joblib
 
 
-df=pd.read_csv("XSS_dataset.csv")
+'''df=pd.read_csv("XSS_dataset.csv")
 
 df=df.drop(columns=['Unnamed: 0'])
 
@@ -26,7 +26,7 @@ y_pred = dt.predict(X_test)
 
 # Save model and vectorizer
 #joblib.dump(dt, 'xss_classifier.pkl')
-#joblib.dump(vectorizer, 'tfidf_vectorizer.pkl')
+#joblib.dump(vectorizer, 'tfidf_vectorizer.pkl')'''
 
 model = joblib.load('xss_classifier.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
